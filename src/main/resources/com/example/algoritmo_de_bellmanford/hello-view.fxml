@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_LEFT" spacing="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.algoritmo_de_bellmanford.HelloController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <children>
+        <Label text="Simulador do Algoritmo de Bellman-Ford">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <HBox spacing="15.0" alignment="CENTER_LEFT">
+            <children>
+                <Button fx:id="btnExecutar" text="Executar Algoritmo" onAction="#onExecutarButtonClick" style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label fx:id="lblStatus" text="Estado: Aguardando execução">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <!-- Painel de Desenho do Grafo -->
+        <Label text="Visualização Gráfica do Grafo:" />
+        <Pane fx:id="paneGrafo" prefHeight="180.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4; -fx-border-color: #cccccc; -fx-border-radius: 5;" />
+
+        <Label text="Tabela de Resultados (Distâncias Mínimas):" />
+
+        <TableView fx:id="tabelaResultados" prefHeight="140.0">
+            <columns>
+                <TableColumn fx:id="colVertice" text="Vértice Destino" prefWidth="130.0" />
+                <TableColumn fx:id="colDistancia" text="Distância Mínima" prefWidth="140.0" />
+                <TableColumn fx:id="colPredecessor" text="Predecessor" prefWidth="130.0" />
+            </columns>
+        </TableView>
+
+        <Label text="Consola de Execução / Logs:" />
+        <TextArea fx:id="txtConsole" prefHeight="100.0" editable="false" promptText="Os detalhes das iterações aparecerão aqui..." />
+    </children>
+</VBox>
